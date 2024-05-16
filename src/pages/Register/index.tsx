@@ -24,7 +24,7 @@ const Register = () => {
 
   return (
     <div className="flex-1 flex flex-col bg-bgColor-100 py-4">
-      <div className="max-w-[650px] mr-auto">
+      <div className="2xl:max-w-[650px] mr-auto">
         <span className="flex justify-between xl:justify-end px-5 text-base font-normal leading-[20.83px]">
           <img
             alt="logo"
