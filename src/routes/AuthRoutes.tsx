@@ -1,5 +1,3 @@
-import { lazy } from "react";
-
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 import AuthLayout from "../layouts/AuthLayout";
