@@ -26,16 +26,6 @@ const Register = () => {
     },
   });
 
-  function compare(a: any, b: any) {
-    if (a.fullName < b.fullName) {
-      return -1;
-    }
-    if (a.fullName > b.fullName) {
-      return 1;
-    }
-    return 0;
-  }
-
   const countriesNamesMemoized = useMemo(() => {
     const countriesList: any = {};
     countries.forEach(
