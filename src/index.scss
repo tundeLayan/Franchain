@@ -32,6 +32,8 @@
 ul[role="listbox"] {
   width: 250px;
   left: -150px;
+  height: 50vh;
+  max-height: 300px;
 }
 
 button#rfs-btn {
