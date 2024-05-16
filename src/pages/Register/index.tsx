@@ -1,6 +1,4 @@
-import React from "react";
-
-import { useForm, SubmitHandler, FieldErrors } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
@@ -22,9 +20,7 @@ const Register = () => {
 
   type FormType = z.infer<typeof editProviderSchema>;
 
-  const onSubmit = (values: FormType) => {};
-
-  console.log("errors", errors);
+  const onSubmit = (/*values: FormType*/) => {};
 
   return (
     <div className="flex-1 flex flex-col bg-bgColor-100 py-4">
