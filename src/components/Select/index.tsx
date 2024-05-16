@@ -54,7 +54,7 @@ const SelectComponent: React.FC<any> = <T extends string>({
       <div className="flex relative">
         <input
           className={cx(
-            `flex-[7] appearance-none block w-full border h-[33.86px] 
+            `flex-[9] xs:flex-[10] sm:flex-[10] md:flex-[8] lg:flex-[8] appearance-none block w-full border h-[33.86px] 
           md:h-[56px] py-3 px-4 border-neutral-100 rounded-[6.05px] 
           md:rounded-xl focus:outline-none focus:ring-transparent 
           focus-visible:ring-transparent xs:h-[40.63px] !rounded-tr-none !rounded-br-none`,
@@ -63,7 +63,7 @@ const SelectComponent: React.FC<any> = <T extends string>({
           onChange={(e) => onInputChange(e.target.value)}
         />
         <select
-          className={`flex-[2] md:flex-[1] appearance-none block w-full border h-[33.86px] 
+          className={`flex-[2] xs:flex-[2] sm:flex-[1] md:flex-[1] lg:flex-[1] appearance-none block w-full border h-[33.86px] 
           md:h-[56px] py-1 px-2 md:py-3 md:px-4 border-neutral-100 rounded-[6.05px] 
           md:rounded-xl focus:outline-none focus:ring-transparent 
           focus-visible:ring-transparent xs:h-[40.63px] !rounded-tl-none !rounded-bl-none`}
@@ -71,13 +71,21 @@ const SelectComponent: React.FC<any> = <T extends string>({
           value={dropdownValue}
         >
           {options.map(({ value, label }) => (
-            <option className="text-[1.3rem] md:text-base" value={value}>
+            <option
+              style={{
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
+              }}
+              className="text-[1.3rem] md:text-base"
+              value={value}
+            >
               {label}
             </option>
           ))}
         </select>
         <img
-          className="absolute w-[15px] h-[15px] md:w-[25px] md:h-[25px] right-[4px] bottom-[14px]"
+          className="absolute w-[16px] h-[16px] md:w-[25px] md:h-[25px] right-[4px] bottom-[12px] md:bottom-[14px]"
           alt="icon"
           src={Icons.Dropdown}
         />

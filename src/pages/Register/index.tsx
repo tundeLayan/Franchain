@@ -37,7 +37,7 @@ const Register = () => {
       countries
         .map((country) => ({
           value: country?.cca2,
-          label: `${country.flag}  ${country.cca2}`,
+          label: `${country.flag} ${country.cca2} - ${country.name.common}`,
           fullName: country.name.common,
         }))
         .sort(compare),
