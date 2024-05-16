@@ -1,25 +1,32 @@
-import {
-  createBrowserRouter,
-  Navigate,
-  RouterProvider,
-} from "react-router-dom";
+import { lazy } from "react";
+
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 import AuthLayout from "../layouts/AuthLayout";
 import Register from "../pages/Register";
+import Home from "../pages/Home";
 
 const router = createBrowserRouter([
   {
-    element: <AuthLayout />,
-    // TODO: Implement Error boundary
-    // errorElement: <ErrorBoundary />,
+    element: (
+      <>
+        <Outlet />
+      </>
+    ),
     children: [
       {
-        path: "register",
-        element: <Register />,
+        index: true,
+        element: <Home />,
       },
       {
-        path: "",
-        element: <Navigate to="/register" />,
+        element: <AuthLayout />,
+        path: "auth/",
+        children: [
+          {
+            path: "register",
+            element: <Register />,
+          },
+        ],
       },
     ],
   },
