@@ -15,9 +15,16 @@
 }
 
 .form-title {
-  @apply text-[1.375rem] md:text-[2.1875rem] md:font-medium md:leading-[45.57px] text-left text-secondary-100;
+  @apply text-[1.7875rem] md:text-[2.1875rem] md:font-medium md:leading-[45.57px] text-left text-secondary-100;
 }
 
 .form-subtitle {
-  @apply text-base leading-[28.64px] md:text-xl md:font-normal md:leading-[26.04px] text-left text-secondary-100;
+  @apply text-[1.3rem] leading-[28.64px] md:text-xl md:font-normal md:leading-[26.04px] text-left text-secondary-100;
+}
+
+// React country select
+.ReactFlagsSelect-module_selectBtn__19wW7 {
+  padding: 11px 16px !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
 }

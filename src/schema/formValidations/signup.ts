@@ -12,6 +12,9 @@ export const editProviderSchema = z.object({
   businessName: z.string({
     required_error: ErrorMessages.required("Business Name"),
   }),
+  hqLocation: z.string({
+    required_error: ErrorMessages.required("HQ Location"),
+  }),
   workEmail: z
     .string({
       required_error: ErrorMessages.required("Work Email"),

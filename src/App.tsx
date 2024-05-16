@@ -12,3 +12,10 @@ function App() {
 }
 
 export default App;
+
+// Reduce logo by 20% on desktop  - Done
+// - Stack first name and last name side by side on all screens - Done
+// - Increase font sizes by 30% on mobile
+// - Increase input boxes by 20% in height on mobile - done
+// - Add country dropdown on the Business name and HQ - done
+// - location same as Gocardless

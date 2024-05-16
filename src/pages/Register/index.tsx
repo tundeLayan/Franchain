@@ -1,22 +1,48 @@
+import { useMemo } from "react";
+
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-import { Input, Button } from "../../components";
+import { Input, Button, Select } from "../../components";
 import { editProviderSchema } from "../../schema/formValidations/signup";
 import { Icons } from "../../assets";
-import { Link } from "react-router-dom";
+import { countries } from "../../utils/countries";
 
 const Register = () => {
   const {
     register,
     handleSubmit,
     formState: { errors, isValid },
+    setValue,
+    watch,
   } = useForm<FormType>({
     mode: "onChange",
     reValidateMode: "onChange",
     resolver: zodResolver(editProviderSchema),
   });
+
+  function compare(a: any, b: any) {
+    if (a.fullName < b.fullName) {
+      return -1;
+    }
+    if (a.fullName > b.fullName) {
+      return 1;
+    }
+    return 0;
+  }
+  const countriesMemoized = useMemo(
+    () =>
+      countries
+        .map((country) => ({
+          value: country?.cca2,
+          label: `${country.flag}  ${country.cca2}`,
+          fullName: country.name.common,
+        }))
+        .sort(compare),
+    [],
+  );
 
   type FormType = z.infer<typeof editProviderSchema>;
 
@@ -37,7 +63,7 @@ const Register = () => {
             src={Icons.LogoSmall}
           />
           <Link className="flex items-center hover:opacity-70" to="/register">
-            <p className="text-secondary-100 text-base font-normal leading-[20.83px] ">
+            <p className="text-secondary-100 text-[1.3rem] md:text-base font-normal leading-[20.83px] ">
               Log in
             </p>
             <img className="w-[18px] h-[18px] ml-4" src={Icons.RightArrow} />
@@ -52,21 +78,29 @@ const Register = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col py-4 md:py-7 gap-3"
           >
-            <Input
-              error={errors.firstName}
-              {...register("firstName")}
-              label="First name"
-            />
-            <Input
-              error={errors.lastName}
-              {...register("lastName")}
-              label="Last name"
-            />
-            <Input
-              error={errors.businessName}
-              {...register("businessName")}
+            <div className="grid grid-cols-2 gap-4">
+              <Input
+                error={errors.firstName}
+                {...register("firstName")}
+                label="First name"
+              />
+              <Input
+                error={errors.lastName}
+                {...register("lastName")}
+                label="Last name"
+              />
+            </div>
+
+            <Select
               label="Business name and HQ location"
+              onInputChange={(val: string) => setValue("businessName", val)}
+              onDropdownChange={(val: string) => setValue("hqLocation", val)}
+              options={countriesMemoized || []}
+              dropdownValue={watch("hqLocation")}
+              inputValue={watch("businessName")}
+              id="businessName"
             />
+
             <Input
               error={errors.workEmail}
               {...register("workEmail")}
@@ -85,7 +119,7 @@ const Register = () => {
             />
 
             {/* TODO: Move to a constant file */}
-            <span className="text-[10px] md:text-sm font-normal leading-[18.23px] text-left text-secondary-100">
+            <span className="text-[13px] md:text-sm font-normal leading-[18.23px] text-left text-secondary-100">
               By clicking “Start Application“, I agree to Mercury's{" "}
               <a className="underline" href="#">
                 Terms of Use

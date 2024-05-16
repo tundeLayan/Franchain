@@ -14,10 +14,13 @@ const TextInput: React.FC<TextInputProps> = React.forwardRef<
 >(({ error, className, name, label, ...rest }, ref) => {
   return (
     <div className="flex flex-col gap-[6.05px] md:gap-[10px]">
-      {label && <p className="text-xs md:text-base ">{label}</p>}
+      {label && <p className="text-[0.975rem] md:text-base ">{label}</p>}
       <input
         className={cx(
-          "appearance-none block w-full border h-[33.86px] md:h-[56px] py-3 px-4 border-neutral-100 rounded-[6.05px] md:rounded-xl focus:outline-none focus:ring-transparent focus-visible:ring-transparent",
+          `appearance-none block w-full border h-[33.86px] 
+          md:h-[56px] py-3 px-4 border-neutral-100 rounded-[6.05px] 
+          md:rounded-xl focus:outline-none focus:ring-transparent 
+          focus-visible:ring-transparent xs:h-[40.63px]`,
           className,
         )}
         ref={ref}
@@ -26,7 +29,7 @@ const TextInput: React.FC<TextInputProps> = React.forwardRef<
       />
 
       {error && (
-        <p className="text-error-100 text-xs font-normal leading-[15.62px] mt-1 md:text-base">
+        <p className="text-error-100 text-[0.975rem] font-normal leading-[15.62px] mt-1 md:text-base">
           {error?.message}
         </p>
       )}

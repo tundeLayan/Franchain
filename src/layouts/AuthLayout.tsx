@@ -7,7 +7,7 @@ export default function AuthLayout(): React.ReactElement {
       <div className="flex-1 border bg-cover bg-center w-full bg-[url('/authScreen.png')] px-5 py-2 hidden xl:block">
         <div className="max-w-[650px] ml-auto">
           <nav className="">
-            <img alt="logo" src={Icons.Logo} />
+            <img alt="logo" className="xl:scale-75" src={Icons.Logo} />
           </nav>
           <div className="text-center py-10 mt-24">
             <img
