@@ -6,8 +6,7 @@ import {
   FieldError,
   FieldValues,
 } from "react-hook-form";
-import Select from "react-select";
-import ReactFlagsSelect from "react-flags-select";
+
 import { Icons } from "../../assets";
 
 interface IProps<T extends string> {
