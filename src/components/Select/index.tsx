@@ -6,6 +6,7 @@ import {
   FieldError,
   FieldValues,
 } from "react-hook-form";
+import ReactFlagsSelect from "react-flags-select";
 
 import { Icons } from "../../assets";
 
@@ -26,6 +27,8 @@ interface IProps<T extends string> {
   dropdownValue: string;
   inputValue: string;
   required?: boolean;
+  customLabels: any;
+  countries: any;
 }
 const SelectComponent: React.FC<any> = <T extends string>({
   label,
@@ -39,22 +42,27 @@ const SelectComponent: React.FC<any> = <T extends string>({
   isLoading = false,
   required = false,
   error,
+  customLabels,
+  countries,
   ...rest
 }: IProps<T>) => {
   return (
     <div
       className={cx(
         { [`${containerClass}`]: containerClass },
-        "flex flex-col gap-1",
+        "flex flex-col gap-1 ",
       )}
     >
-      <label className={"text-[0.975rem] md:text-base"} htmlFor={rest.id}>
+      <label
+        className={"text-[0.975rem] flex-[8] md:text-base"}
+        htmlFor={rest.id}
+      >
         {label} {required && <span className="text-danger-600">*</span>}
       </label>
-      <div className="flex relative">
+      <div className="flex relative bg-white">
         <input
           className={cx(
-            `flex-[9] xs:flex-[10] sm:flex-[10] md:flex-[8] lg:flex-[8] appearance-none block w-full border h-[33.86px] 
+            `flex-[10] appearance-none block w-full border h-[33.86px] 
           md:h-[56px] py-3 px-4 border-neutral-100 rounded-[6.05px] 
           md:rounded-xl focus:outline-none focus:ring-transparent 
           focus-visible:ring-transparent xs:h-[40.63px] !rounded-tr-none !rounded-br-none`,
@@ -62,32 +70,17 @@ const SelectComponent: React.FC<any> = <T extends string>({
           value={inputValue}
           onChange={(e) => onInputChange(e.target.value)}
         />
-        <select
-          className={`flex-[2] xs:flex-[2] sm:flex-[1] md:flex-[1] lg:flex-[1] appearance-none block w-full border h-[33.86px] 
-          md:h-[56px] py-1 px-2 md:py-3 md:px-4 border-neutral-100 rounded-[6.05px] 
+        <ReactFlagsSelect
+          selected={dropdownValue}
+          className={`
+          appearance-none flex-[2] block w-full h-full rounded-[6.05px] 
           md:rounded-xl focus:outline-none focus:ring-transparent 
           focus-visible:ring-transparent xs:h-[40.63px] !rounded-tl-none !rounded-bl-none`}
-          onChange={(e) => onDropdownChange(e.target.value)}
-          value={dropdownValue}
-        >
-          {options.map(({ value, label }) => (
-            <option
-              style={{
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                whiteSpace: "nowrap",
-              }}
-              className="text-[1.3rem] md:text-base"
-              value={value}
-            >
-              {label}
-            </option>
-          ))}
-        </select>
-        <img
-          className="absolute w-[16px] h-[16px] md:w-[25px] md:h-[25px] right-[4px] bottom-[12px] md:bottom-[14px]"
-          alt="icon"
-          src={Icons.Dropdown}
+          onSelect={onDropdownChange}
+          showSecondarySelectedLabel={false}
+          showOptionLabel={false}
+          customLabels={customLabels}
+          countries={countries}
         />
       </div>
     </div>

@@ -28,3 +28,18 @@
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
 }
+
+ul[role="listbox"] {
+  width: 250px;
+  left: -150px;
+}
+
+button#rfs-btn {
+  padding: 11px 5px !important;
+}
+
+@media screen and (max-width: 767px) {
+  button#rfs-btn {
+    padding: 3.4px 5px !important;
+  }
+}

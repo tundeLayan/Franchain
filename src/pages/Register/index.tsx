@@ -21,6 +21,9 @@ const Register = () => {
     mode: "onChange",
     reValidateMode: "onChange",
     resolver: zodResolver(editProviderSchema),
+    defaultValues: {
+      hqLocation: "US",
+    },
   });
 
   function compare(a: any, b: any) {
@@ -32,17 +35,25 @@ const Register = () => {
     }
     return 0;
   }
-  const countriesMemoized = useMemo(
-    () =>
-      countries
-        .map((country) => ({
-          value: country?.cca2,
-          label: `${country.flag} ${country.cca2} - ${country.name.common}`,
-          fullName: country.name.common,
-        }))
-        .sort(compare),
-    [],
-  );
+
+  const countriesNamesMemoized = useMemo(() => {
+    const countriesList: any = {};
+    countries.forEach(
+      (country) =>
+        (countriesList[`${country?.cca2}`] = {
+          label: (
+            <span style={{ width: "100%", display: "inline-block" }}>
+              {country.name.common}
+            </span>
+          ),
+          primary: country?.cca2,
+          secondary: country.name.common,
+        }),
+    );
+    return countriesList;
+  }, []);
+
+  const COUNTRY_CODES = Object.keys(countriesNamesMemoized);
 
   type FormType = z.infer<typeof editProviderSchema>;
 
@@ -95,10 +106,12 @@ const Register = () => {
               label="Business name and HQ location"
               onInputChange={(val: string) => setValue("businessName", val)}
               onDropdownChange={(val: string) => setValue("hqLocation", val)}
-              options={countriesMemoized || []}
+              // options={countriesMemoized || []}
               dropdownValue={watch("hqLocation")}
               inputValue={watch("businessName")}
               id="businessName"
+              customLabels={countriesNamesMemoized}
+              countries={COUNTRY_CODES}
             />
 
             <Input
