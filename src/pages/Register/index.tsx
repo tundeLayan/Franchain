@@ -63,7 +63,7 @@ const Register = () => {
             className="inline-block md:hidden"
             src={Icons.LogoSmall}
           />
-          <Link className="flex items-center hover:opacity-70" to="/register">
+          <Link className="flex items-center hover:opacity-70" to="/auth/login">
             <p className="text-secondary-100 text-[1.3rem] md:text-base font-normal leading-[20.83px] ">
               Log in
             </p>

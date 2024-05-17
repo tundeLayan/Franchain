@@ -2,7 +2,10 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 import AuthLayout from "../layouts/AuthLayout";
 import Register from "../pages/Register";
+import CheckEmail from "../pages/CheckEmail";
+import Login from "../pages/Login";
 import Home from "../pages/Home";
+import ResetPassword from "../pages/ResetPassword";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +26,18 @@ const router = createBrowserRouter([
           {
             path: "register",
             element: <Register />,
+          },
+          {
+            path: "check-email",
+            element: <CheckEmail />,
+          },
+          {
+            path: "login",
+            element: <Login />,
+          },
+          {
+            path: "reset-password",
+            element: <ResetPassword />,
           },
         ],
       },

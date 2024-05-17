@@ -6,14 +6,19 @@ interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   // error?: FieldError;
   label: string;
   error?: any;
+  containerClassName?: string;
 }
 
 const TextInput: React.FC<TextInputProps> = React.forwardRef<
   HTMLInputElement,
   Omit<TextInputProps, "ref">
->(({ error, className, name, label, ...rest }, ref) => {
+>(({ error, className, name, label, containerClassName, ...rest }, ref) => {
   return (
-    <div className="flex flex-col gap-[6.05px] md:gap-[10px]">
+    <div
+      className={cx(`flex flex-col gap-[6.05px] md:gap-[10px]`, {
+        [`${containerClassName}`]: containerClassName,
+      })}
+    >
       {label && <p className="text-base md:text-base label">{label}</p>}
       <input
         className={cx(
@@ -30,7 +35,7 @@ const TextInput: React.FC<TextInputProps> = React.forwardRef<
 
       {error && (
         <p className="text-error-100 text-[0.975rem] font-normal leading-[15.62px] mt-1 md:text-base">
-          {error?.message}
+          {error?.message || error}
         </p>
       )}
     </div>
