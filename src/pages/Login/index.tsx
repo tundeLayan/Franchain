@@ -68,9 +68,9 @@ const Login = () => {
                 />
                 <p className="text-[13px] md:text-base font-normal leading-[18.23px] text-left text-secondary-100">
                   Forgot your password?{" "}
-                  <a href="#" className="underline">
+                  <Link to="/auth/reset-password" className="underline">
                     click here to reset
-                  </a>
+                  </Link>
                 </p>
               </div>
               <Button
