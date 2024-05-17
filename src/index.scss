@@ -39,7 +39,13 @@
   padding: 11px 16px !important;
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
-  @apply rounded-[6.05px] md:rounded-xl;
+  border-radius: 12px;
+  // @apply rounded-[6.05px] md:rounded-xl;
+}
+@media screen and (max-width: 767px) {
+  .ReactFlagsSelect-module_selectBtn__19wW7 {
+    border-radius: 6.05px;
+  }
 }
 
 ul[role="listbox"] {
@@ -48,7 +54,8 @@ ul[role="listbox"] {
   height: 50vh;
   max-height: 300px;
   transform: translate(-8px, -6px);
-  @apply rounded-[6.05px];
+  border-radius: 0px !important;
+  // @apply rounded-[6.05px];
 }
 
 button#rfs-btn {
