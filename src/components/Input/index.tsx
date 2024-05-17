@@ -20,7 +20,7 @@ const TextInput: React.FC<TextInputProps> = React.forwardRef<
           `appearance-none block w-full border h-[48px] 
           md:h-[56px] py-3 px-4 border-neutral-100 rounded-[6.05px] 
           md:rounded-xl focus:outline-none focus:ring-transparent 
-          focus-visible:ring-transparent xs:h-[40.63px]`,
+          focus-visible:ring-transparent xs:h-[40.63px] text-base md:text-lg lg:text-xl`,
           className,
         )}
         ref={ref}

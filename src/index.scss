@@ -39,6 +39,7 @@
   padding: 11px 16px !important;
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
+  @apply rounded-[6.05px] md:rounded-xl;
 }
 
 ul[role="listbox"] {
@@ -47,14 +48,15 @@ ul[role="listbox"] {
   height: 50vh;
   max-height: 300px;
   transform: translate(-8px, -6px);
+  @apply rounded-[6.05px];
 }
 
 button#rfs-btn {
-  padding: 11px 5px !important;
+  padding: 11px 15px 11px 5px !important;
 }
 
 @media screen and (max-width: 767px) {
   button#rfs-btn {
-    padding: 3.4px 5px !important;
+    padding: 3.4px 15px 3.4px 5px !important;
   }
 }
