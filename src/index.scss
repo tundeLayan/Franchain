@@ -13,6 +13,10 @@
   margin: 0;
   padding: 0;
 }
+body {
+  background: #f8f8fb;
+  @apply text-secondary-100;
+}
 
 .form-title {
   @apply text-[30px] md:text-[2.1875rem] md:font-medium md:leading-[45.57px] text-left text-secondary-100;
@@ -34,6 +38,14 @@
   }
 }
 
+.onboarding-card {
+  @apply border cursor-pointer hover:border-primary-100 shadow-onboardingCard border-secondary-150 rounded-[15px] py-10 md:px-[35px] xl:px-[53px] flex justify-between items-center gap-3 xl:gap-5;
+}
+
+.franchain-checkbox {
+  @apply data-[state=checked]:bg-primary-100 border-[0.82px] data-[state=checked]:border-primary-100 w-[23.91px] h-[23.91px];
+}
+
 // // React country select
 // .ReactFlagsSelect-module_selectBtn__19wW7 {
 //   padding: 11px 16px !important;
@@ -48,6 +60,9 @@
 //   }
 // }
 
+/**
+styles for react country select starts here
+**/
 ul[role="listbox"] {
   width: 250px;
   left: -140px;
@@ -76,3 +91,7 @@ button#rfs-btn {
     // border-radius: 6.05px !important;
   }
 }
+
+/**
+styles for react country select ends here
+**/

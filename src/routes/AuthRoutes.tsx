@@ -1,12 +1,20 @@
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
 
 import AuthLayout from "../layouts/AuthLayout";
+import OnBoardingLayout from "../layouts/OnboardingLayout";
+
 import Register from "../pages/Register";
 import CheckEmail from "../pages/CheckEmail";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 import ResetPassword from "../pages/ResetPassword";
 import ConfirmationCheckEmail from "../pages/CheckEmail/confirmation";
+import Onboarding from "../pages/Onboarding";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +27,24 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "onboarding",
+        element: <OnBoardingLayout />,
+        children: [
+          {
+            index: true,
+            element: <Navigate to="/onboarding/one" />,
+          },
+          {
+            path: "one",
+            element: <Onboarding />,
+          },
+          {
+            path: "two",
+            element: <></>,
+          },
+        ],
       },
       {
         element: <AuthLayout />,
