@@ -6,6 +6,7 @@ import CheckEmail from "../pages/CheckEmail";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 import ResetPassword from "../pages/ResetPassword";
+import ConfirmationCheckEmail from "../pages/CheckEmail/confirmation";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
           {
             path: "reset-password",
             element: <ResetPassword />,
+          },
+          {
+            path: "confirm-email",
+            element: <ConfirmationCheckEmail />,
           },
         ],
       },
