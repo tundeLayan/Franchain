@@ -34,19 +34,19 @@
   }
 }
 
-// React country select
-.ReactFlagsSelect-module_selectBtn__19wW7 {
-  padding: 11px 16px !important;
-  border-top-left-radius: 0px !important;
-  border-bottom-left-radius: 0px !important;
-  border-radius: 12px;
-  // @apply rounded-[6.05px] md:rounded-xl;
-}
-@media screen and (max-width: 767px) {
-  .ReactFlagsSelect-module_selectBtn__19wW7 {
-    border-radius: 6.05px;
-  }
-}
+// // React country select
+// .ReactFlagsSelect-module_selectBtn__19wW7 {
+//   padding: 11px 16px !important;
+//   border-top-left-radius: 0px !important;
+//   border-bottom-left-radius: 0px !important;
+//   border-radius: 12px;
+//   // @apply rounded-[6.05px] md:rounded-xl;
+// }
+// @media screen and (max-width: 767px) {
+//   .ReactFlagsSelect-module_selectBtn__19wW7 {
+//     border-radius: 6.05px;
+//   }
+// }
 
 ul[role="listbox"] {
   width: 250px;
@@ -60,16 +60,18 @@ ul[role="listbox"] {
 
 button#rfs-btn {
   padding: 11px 15px 11px 5px !important;
-  // padding: 11px 16px !important;
-  // border-top-left-radius: 0px !important;
-  // border-bottom-left-radius: 0px !important;
-  // border-radius: 12px !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
   // @apply rounded-[6.05px] md:rounded-xl;
 }
 
 @media screen and (max-width: 767px) {
   button#rfs-btn {
     padding: 3.4px 15px 3.4px 5px !important;
+    border-top-right-radius: 6.05px !important;
+    border-bottom-right-radius: 6.05px !important;
     // border-radius: 6.05px !important;
   }
 }
