@@ -7,7 +7,7 @@ import { Input, Button } from "../../components";
 import { loginProviderSchema } from "../../schema/formValidations/signup";
 import { Icons } from "../../assets";
 
-const Register = () => {
+const Login = () => {
   const {
     register,
     handleSubmit,
@@ -86,4 +86,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

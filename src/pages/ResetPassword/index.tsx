@@ -9,7 +9,7 @@ import { Input, Button } from "../../components";
 import { ResetPasswordSchema } from "../../schema/formValidations/signup";
 import { Icons } from "../../assets";
 
-const Register = () => {
+const ResetPassword = () => {
   const [errorMessage, setErrorMessage] = useState<null | string>(null);
   const [loading, setLoading] = useState(false);
 
@@ -88,4 +88,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default ResetPassword;
