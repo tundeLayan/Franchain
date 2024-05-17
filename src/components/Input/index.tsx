@@ -34,7 +34,7 @@ const TextInput: React.FC<TextInputProps> = React.forwardRef<
       />
 
       {error && (
-        <p className="text-error-100 text-[0.975rem] font-normal leading-[15.62px] mt-1 md:text-base">
+        <p className="text-error-100 text-[0.625rem] font-normal leading-[15.62px] mt-1 md:text-base">
           {error?.message || error}
         </p>
       )}
