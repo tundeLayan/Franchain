@@ -15,11 +15,23 @@
 }
 
 .form-title {
-  @apply text-[1.7875rem] md:text-[2.1875rem] md:font-medium md:leading-[45.57px] text-left text-secondary-100;
+  @apply text-[30px] md:text-[2.1875rem] md:font-medium md:leading-[45.57px] text-left text-secondary-100;
 }
 
 .form-subtitle {
-  @apply text-[1.3rem] leading-[28.64px] md:text-xl md:font-normal md:leading-[26.04px] text-left text-secondary-100;
+  @apply text-[20px] leading-[28.64px] md:text-xl md:font-normal md:leading-[26.04px] text-left text-secondary-100;
+}
+
+@media screen and (max-width: 767px) {
+  .form-title {
+    font-weight: bold;
+  }
+  .form-subtitle {
+    font-weight: normal;
+  }
+  .label {
+    font-weight: normal;
+  }
 }
 
 // React country select

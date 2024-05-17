@@ -52,7 +52,7 @@ const SelectComponent: React.FC<any> = <T extends string>({
       )}
     >
       <label
-        className={"text-[0.975rem] flex-[8] md:text-base"}
+        className={"text-base flex-[8] md:text-base label"}
         htmlFor={rest.id}
       >
         {label} {required && <span className="text-danger-600">*</span>}

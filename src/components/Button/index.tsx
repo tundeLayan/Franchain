@@ -34,7 +34,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       disabled={loading || disabled}
       type={type}
-      className={`h-fit w-fit rounded-[60px] items-center justify-center px-[24.18px] py-[9.07px] md:px-10 md:py-[15px] text-xs md:text-lg font-bold leading-[23.44px] hover:opacity-70 ${
+      className={`h-fit w-fit rounded-[60px] items-center justify-center px-[40px] py-[10px] md:px-10 md:py-[15px] text-xl md:text-lg font-bold leading-[23.44px] hover:opacity-70 ${
         loading ? "cursor-progress opacity-85" : ""
       } ${disabled ? "cursor-not-allowed border-neutral-500 bg-neutral-150 opacity-70 bg-primary-150" : ""} ${variants[variant]} ${className} ${
         icon || iconAfter || loading ? "flex gap-2" : ""
