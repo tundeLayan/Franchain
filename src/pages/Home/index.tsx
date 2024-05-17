@@ -16,6 +16,9 @@ const HomePage = () => {
         <Link className="text-blue-500" to="/auth/reset-password">
           Reset Password
         </Link>
+        <Link className="text-blue-500" to="/auth/confirm-email">
+          Confirm Email
+        </Link>
       </div>
     </div>
   );
