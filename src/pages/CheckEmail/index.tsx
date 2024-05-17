@@ -38,9 +38,9 @@ const CheckEmail = () => {
             className="inline-block md:hidden"
             src={Icons.LogoSmall}
           />
-          <Link
+          <div
             className="flex items-center hover:opacity-70"
-            to="#"
+            role="link"
             onClick={(e) => {
               e.preventDefault();
               navigate(-1);
@@ -50,7 +50,7 @@ const CheckEmail = () => {
               Go Back
             </p>
             <img className="w-[18px] h-[18px] ml-4" src={Icons.RightArrow} />
-          </Link>
+          </div>
         </span>
         <div className="md:min-h-[600px] xl:min-h-[870px] flex items-center">
           <div className="py-5 mt-14 md:mt-5 w-11/12 md:w-7/12 xl:w-10/12 mx-auto xl:mt-0 ">

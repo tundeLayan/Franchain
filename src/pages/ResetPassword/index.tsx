@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -10,6 +10,7 @@ import { ResetPasswordSchema } from "../../schema/formValidations/signup";
 import { Icons } from "../../assets";
 
 const ResetPassword = () => {
+  const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState<null | string>(null);
   const [loading, setLoading] = useState(false);
 
@@ -47,15 +48,19 @@ const ResetPassword = () => {
             className="inline-block md:hidden"
             src={Icons.LogoSmall}
           />
-          <Link
+          <div
             className="flex items-center hover:opacity-70"
-            to="/auth/register"
+            role="link"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate(-1);
+            }}
           >
             <p className="text-secondary-100 text-[1.3rem] md:text-base font-normal leading-[20.83px] ">
               Go back
             </p>
             <img className="w-[18px] h-[18px] ml-4" src={Icons.RightArrow} />
-          </Link>
+          </div>
         </span>
         <div className="md:min-h-[600px] xl:min-h-[870px] flex items-center">
           <div className="py-5 mt-14 md:mt-5 w-11/12 md:w-7/12 xl:w-10/12 mx-auto xl:mt-0 ">
