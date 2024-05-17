@@ -71,8 +71,8 @@ const Register = () => {
           </Link>
         </span>
         {/* REFACTOR: There should be a better way to do this */}
-        <div className="md:min-h-[870px] flex items-center">
-          <div className="py-5 md:mt-14 w-11/12 md:w-7/12 xl:w-10/12 mx-auto xl:mt-0 ">
+        <div className="xl:min-h-[870px] flex items-center">
+          <div className="py-5 mt-14 md:mt-5 w-11/12 md:w-7/12 xl:w-10/12 mx-auto xl:mt-0 ">
             <h5 className="form-title mb-1 md:mb-2">
               Get started with Franchain{" "}
             </h5>
