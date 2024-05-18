@@ -1,10 +1,13 @@
 import { Link, Outlet } from "react-router-dom";
 
+import { useNavigate } from "react-router-dom";
+
 import { Icons } from "../assets";
 import { COMPANY_DATA } from "../constants/companyData";
 import { Button } from "@/components";
 
 const OnBoardingLayout = () => {
+  const navigate = useNavigate();
   return (
     <main className="min-h-screen max-w-[1300px] mx-auto">
       <nav className="flex justify-between px-5 md:py-5 md:px-10 xl:px-2">
@@ -20,7 +23,7 @@ const OnBoardingLayout = () => {
           <img className="w-[18px] h-[18px] ml-4" src={Icons.RightArrow} />
         </Link>
       </nav>
-      <section className="xl:min-h-[calc(100vh-10rem)] md:px-[6.8125rem] xl:px-2 ">
+      <section className="xl:min-h-[calc(100vh-20rem)] md:px-[6.8125rem] xl:px-2 ">
         <Outlet />
       </section>
       <hr className="border-b border-secondary-200 mb-[39.96px] md:mb-[109px] md:mt-[58px]" />
@@ -84,6 +87,7 @@ const OnBoardingLayout = () => {
         <Button
           label="Continue"
           className="!w-[95%] mx-auto md:w-fit mt-2 md:mt-4 "
+          onClick={() => navigate("/onboarding/two")}
         />
       </div>
     </main>

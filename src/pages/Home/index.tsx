@@ -22,6 +22,9 @@ const HomePage = () => {
         <Link className="text-blue-500" to="/onboarding/one">
           Onboarding Screen 1
         </Link>
+        <Link className="text-blue-500" to="/onboarding/two">
+          Onboarding Screen 2
+        </Link>
       </div>
     </div>
   );

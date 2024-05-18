@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import { Icons } from "../../assets";
 import { Button, Checkbox } from "@/components";
 import { OnboardingCard } from "@/ui-components";
@@ -45,6 +47,7 @@ const Items = [
 
 const Onboarding = () => {
   const [goals, setGoals] = useState(Items);
+  const navigate = useNavigate();
 
   const handleSelected = (id: number | string) => {
     setGoals((prev) =>
@@ -103,6 +106,7 @@ const Onboarding = () => {
           label="Continue"
           className="mx-auto !md:w-fit mt-2 md:mt-4 "
           disabled={isDisabled()}
+          onClick={() => navigate("/onboarding/two")}
         />
       </div>
     </div>

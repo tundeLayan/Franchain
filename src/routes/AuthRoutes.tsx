@@ -15,6 +15,7 @@ import Home from "../pages/Home";
 import ResetPassword from "../pages/ResetPassword";
 import ConfirmationCheckEmail from "../pages/CheckEmail/confirmation";
 import Onboarding from "../pages/Onboarding";
+import OnboardingTwo from "../pages/Onboarding/two";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
           },
           {
             path: "two",
-            element: <></>,
+            element: <OnboardingTwo />,
           },
         ],
       },
