@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import { Icons } from "../assets";
 import { COMPANY_DATA } from "../constants/companyData";
@@ -8,6 +8,9 @@ import { Button } from "@/components";
 
 const OnBoardingLayout = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const showBottomButton = location.pathname.includes("/onboarding/one");
+
   return (
     <main className="min-h-screen max-w-[1300px] mx-auto">
       <nav className="flex justify-between px-5 md:py-5 md:px-10 xl:px-2">
@@ -27,7 +30,7 @@ const OnBoardingLayout = () => {
         <Outlet />
       </section>
       <hr className="border-b border-secondary-200 mb-[39.96px] md:mb-[109px] md:mt-[58px]" />
-      <footer className="px-2 ">
+      <footer className={`px-2 ${showBottomButton ? "pb-[50px] md:pb-0" : ""}`}>
         <p className="font-normal text-sm md:text-lg leading-[23.44px] mb-[35px]">
           {COMPANY_DATA.name} is a financial technology company, not a bank.
           Banking services are provided by trusted regulated banking partners
@@ -83,13 +86,15 @@ const OnBoardingLayout = () => {
           </Link>
         </div>
       </footer>
-      <div className="flex md:hidden justify-center md:mt-[72px] bg-bgColor-150 py-5">
-        <Button
-          label="Continue"
-          className="!w-[95%] mx-auto md:w-fit mt-2 md:mt-4 "
-          onClick={() => navigate("/onboarding/two")}
-        />
-      </div>
+      {showBottomButton && (
+        <div className="flex md:hidden fixed bottom-0 left-0 right-0 justify-center md:mt-[72px] bg-bgColor-150 py-5">
+          <Button
+            label="Continue"
+            className="!w-[95%] mx-auto md:w-fit mt-2 md:mt-4 "
+            onClick={() => navigate("/onboarding/two")}
+          />
+        </div>
+      )}
     </main>
   );
 };
