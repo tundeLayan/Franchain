@@ -7,7 +7,11 @@ const OnBoardingLayout = () => {
   return (
     <main className="min-h-screen max-w-[1300px] mx-auto">
       <nav className="flex justify-between px-5 md:py-5 md:px-10 xl:px-2">
-        <img alt="logo" className="scale-50 xl:scale-75" src={Icons.Logo} />
+        <img
+          alt="logo"
+          className="scale-50 md:scale-100 xl:scale-75"
+          src={Icons.Logo}
+        />
         <Link className="flex items-center hover:opacity-70" to="/auth/login">
           <p className="text-secondary-100 text-[1.3rem] md:text-base font-normal leading-[20.83px] ">
             Skip to dashboard

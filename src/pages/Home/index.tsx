@@ -19,6 +19,9 @@ const HomePage = () => {
         <Link className="text-blue-500" to="/auth/confirm-email">
           Confirm Email
         </Link>
+        <Link className="text-blue-500" to="/onboarding/one">
+          Onboarding Screen 1
+        </Link>
       </div>
     </div>
   );
