@@ -80,7 +80,7 @@ const OnBoardingLayout = () => {
           </Link>
         </div>
       </footer>
-      <div className="flex justify-center md:mt-[72px] bg-bgColor-150 py-5">
+      <div className="flex md:hidden justify-center md:mt-[72px] bg-bgColor-150 py-5">
         <Button
           label="Continue"
           className="!w-[95%] mx-auto md:w-fit mt-2 md:mt-4 "

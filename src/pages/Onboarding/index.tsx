@@ -101,7 +101,7 @@ const Onboarding = () => {
       <div className="hidden md:flex justify-center md:mt-[72px]">
         <Button
           label="Continue"
-          className="!w-[95%] mx-auto md:w-fit mt-2 md:mt-4 "
+          className="mx-auto !md:w-fit mt-2 md:mt-4 "
           disabled={isDisabled()}
         />
       </div>
