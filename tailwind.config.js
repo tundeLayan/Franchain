@@ -29,12 +29,14 @@ export default {
         secondary: {
           100: "#282828",
           150: "#54545499",
+          200: "#E7E9F2",
         },
         neutral: {
           100: "#B1B7D6",
         },
         bgColor: {
           100: "#F8F8FB",
+          150: "#EEEEF5",
         },
         error: {
           100: "#FF4E4E",

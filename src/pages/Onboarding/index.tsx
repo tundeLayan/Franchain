@@ -57,6 +57,9 @@ const Onboarding = () => {
     );
   };
 
+  const isDisabled = () =>
+    goals.filter((goal) => goal.isChecked !== false).length === 0;
+
   return (
     <div className="py-16">
       <div className="flex flex-col items-center mb-[60px] px-4">
@@ -95,10 +98,11 @@ const Onboarding = () => {
           );
         })}
       </div>
-      <div className="flex justify-center mt-[72px]">
+      <div className="hidden md:flex justify-center md:mt-[72px]">
         <Button
           label="Continue"
-          className="w-[95%] mx-auto md:w-fit mt-2 md:mt-4 "
+          className="!w-[95%] mx-auto md:w-fit mt-2 md:mt-4 "
+          disabled={isDisabled()}
         />
       </div>
     </div>

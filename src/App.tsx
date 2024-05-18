@@ -22,6 +22,7 @@ export default App;
 - Input titles 16 - Regular 
 - Button text 20 - 40px padding left and right / 10px top and bottom inside .
 - Input fields change to 48px height
+
 - Reduce logo by 20% on desktop 
 - Stack first name and last name side by side on all screens
 - Increase font sizes by 30% on mobile 

@@ -2,6 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 
 import { Icons } from "../assets";
 import { COMPANY_DATA } from "../constants/companyData";
+import { Button } from "@/components";
 
 const OnBoardingLayout = () => {
   return (
@@ -19,10 +20,11 @@ const OnBoardingLayout = () => {
           <img className="w-[18px] h-[18px] ml-4" src={Icons.RightArrow} />
         </Link>
       </nav>
-      <section className="min-h-[calc(100vh-10rem)] md:px-[6.8125rem] xl:px-2">
+      <section className="xl:min-h-[calc(100vh-10rem)] md:px-[6.8125rem] xl:px-2 ">
         <Outlet />
       </section>
-      <footer className="px-2">
+      <hr className="border-b border-secondary-200 mb-[39.96px] md:mb-[109px] md:mt-[58px]" />
+      <footer className="px-2 ">
         <p className="font-normal text-sm md:text-lg leading-[23.44px] mb-[35px]">
           {COMPANY_DATA.name} is a financial technology company, not a bank.
           Banking services are provided by trusted regulated banking partners
@@ -78,6 +80,12 @@ const OnBoardingLayout = () => {
           </Link>
         </div>
       </footer>
+      <div className="flex justify-center md:mt-[72px] bg-bgColor-150 py-5">
+        <Button
+          label="Continue"
+          className="!w-[95%] mx-auto md:w-fit mt-2 md:mt-4 "
+        />
+      </div>
     </main>
   );
 };
